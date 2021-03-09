@@ -4,21 +4,105 @@ html{
     --HSV-COLOR-YELLOW: #FFC045;
 
     font-family: bahnschrift;
+    color: var(--HSV-COLOR-YELLOW);
 }
 
 body{
     margin: 0;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 main{
-    width: 70vw;
+    max-width: 70vw;
+    height: 100%;
     border-left: 10vw solid var(--HSV-COLOR-BLUE);
     border-right: 10vw solid var(--HSV-COLOR-BLUE);
     background-color: #7EC1CE;
-    top: 90px;
     position: relative;
-    z-index: -1;
-    padding: 10vw 5vw;
+    z-index: 0;
+    padding: 150px 5vw;
+}
+
+a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: unset;
+}
+
+/*copyright*/
+small{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/*banner*/
+#bannerWrapper{
+    height: 130px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#banner{
+    width: 100%;
+    bottom: -100px;
+    position: absolute;
+    filter: grayscale(.5);
+}
+
+/*footer*/
+footer{
+    position: relative;
+    bottom: 0;
+    width: calc(100% - 100px);
+    display: flex;
+    flex-direction: row;
+    background-color: var(--HSV-COLOR-DARKBLUE);
+    justify-content: space-around;
+    padding: 50px;
+}
+
+footer section h3{
+    font-size: 30px;
+    margin: 0;
+}
+
+footer section a{
+    display: block;
+}
+
+/*navigation*/
+nav{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--HSV-COLOR-DARKBLUE);
+}
+
+nav #navLinks{
+    position: relative;
+    display: flex;
+}
+
+nav #navLinks a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav #navLogo{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav #navLogoTxt{
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }

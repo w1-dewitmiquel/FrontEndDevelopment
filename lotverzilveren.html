@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loterij Verzilveren</title>
+        <script type="application/javascript" src='./script/script.js' defer></script>
+        <script type="application/javascript" src='./script/loterij.js' defer></script>
+        <link href='./style/style.css' rel='stylesheet' />
+        <link href='./style/loterij.css' rel='stylesheet' />
+    </head>
+    <body>
+        <main>
+            <div id="wheelOfFortune"></div>
+            <div id="gewonnenTekst"></div>
+            <div id="verzilverForum">
+                <div id="verzilverInput">
+                    <label for="inputName">Naam:</label>
+                    <input type="text" id="inputName">
+                    <label for="inputTicket">Lot:</label>
+                    <input type="text" id="inputTicket">
+                </div>
+                <div id="verzilverBtn" onclick="redeemTicket()">
+                    Verzilver Lot
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

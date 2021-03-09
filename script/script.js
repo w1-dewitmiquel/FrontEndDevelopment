@@ -1,17 +1,71 @@
-function insetHeaderAndFooter(){
+//hardcode; txt is for txt in de navbar; href is for the anchor link
+const navMenu = 
+{
+    title: 'Ga naar',
+    links:[
+        {
+            txt: 'home',
+            href: 'index.html'
+        },
+        {
+            txt: 'team',
+            href: 'team.html'
+        },
+        {
+            txt: 'nieuws',
+            href: 'nieuws.html'
+        },
+        {
+            txt: 'loterij',
+            href: 'loterij.html'
+        },
+        {
+            txt: 'contact',
+            href: 'contact.html'
+        }
+    ]
+};
+
+const mediaLinks = {
+    title: 'Social',
+    links:[
+        {
+            txt: 'facebook',
+            href: 'http://www.facebook.nl'
+        },
+        {
+            txt: 'twitter',
+            href: 'http://www.twitter.nl'
+        },
+        {
+            txt: 'instagram',
+            href: 'http://www.instagram.nl'
+        },
+        {
+            txt: 'youtube',
+            href: 'http://www.youtube.nl'
+        },
+        {
+            txt: 'tiktok',
+            href: 'http://www.tiktok.nl'
+        }
+    ]
+};
+
+function insetHeaderAndFooter() {
     //get the body element from the document;
     var body = document.getElementsByTagName('body')[0];
-    
+
     //generate the elements
-    var nav = createNavigation();
+    var header = createHeader();
     var footer = createFooter();
 
     //place the element
-    body.insertBefore(nav, body.childNodes[0]);
+    body.insertBefore(header, body.childNodes[0]);
     body.appendChild(footer)
 }
 
-function createNavigation(){
+function createNavigation() {
     //setting size for easier scaling
     var size = 180;
 
@@ -22,12 +76,6 @@ function createNavigation(){
 
     //setting navigation bar
     nav.style.height = `${size / 3.75}px`;
-    nav.style.position = 'relative';
-    nav.style.top = `${size / 2}px`;
-    nav.style.width = '100%';
-    nav.style.display = 'flex';
-    nav.style.flexDirection = 'row';
-    nav.style.backgroundColor = 'var(--HSV-COLOR-DARKBLUE)';
 
     //merging elements
     nav.appendChild(logo);
@@ -36,29 +84,24 @@ function createNavigation(){
     return nav
 }
 
-function createNavLogo(size){
+function createNavLogo(size) {
     //creating wrapper
     var logo = document.createElement('div');
+    logo.id = "navLogo"
     logo.style.height = `${size}px`;
-    logo.style.position = 'relative';
-    logo.style.top = `-${size/450*165}px`;
-    logo.style.display = 'flex';
-    logo.style.alignItems = 'center';
+    logo.style.top = `-${size / 450 * 165}px`;
 
     //create Text;
-    var txt = document.createElement('div');
+    var txt = document.createElement('span');
     txt.innerHTML = 'HSV Nederwijk'
-    txt.style.height = `${size /3.75}px`;
+    txt.id = "navLogoTxt"
+    txt.style.height = `${size / 3.75}px`;
     txt.style.width = `${size}px`;
     txt.style.fontSize = `${size / 8}px`;
-    txt.style.display = 'flex';
-    txt.style.justifyContent = 'center';
-    txt.style.alignItems = 'center';
-    txt.style.color = 'var(--HSV-COLOR-YELLOW)';
 
     //creating image
     var img = document.createElement('img');
-    img.setAttribute('src','./images/logo.png');
+    img.setAttribute('src', './images/logo.png');
     img.style.width = `${size}px`;
     img.style.height = `${size}px`;
 
@@ -70,50 +113,19 @@ function createNavLogo(size){
     return logo
 }
 
-function createNavLinks(size){
-    //hardcode; txt is for txt in de navbar; href is for the anchor link
-    const links = [
-        {
-            txt: 'home',
-            href: 'index.html'
-        },
-        {
-            txt: 'team',
-            href: 'team.html'
-        },
-        {
-            txt: 'nieuws',
-            href: 'loterij.html'
-        },
-        {
-            txt: 'loterij',
-            href: 'loterij.html'
-        },
-        {
-            txt: 'contact',
-            href: 'contact.html'
-        }
-    ];
-
+function createNavLinks(size) {
     //creates a wrapper for all the anchors;
     var wrapper = document.createElement('div');
-    wrapper.style.position = 'relative';
-    wrapper.style.display = 'flex';
+    wrapper.id = "navLinks"
 
     //function to insert all available links
-    links.forEach(link=>{
+    navMenu.links.forEach(link => {
         let anchor = document.createElement('a');
         anchor.innerHTML = link.txt;
         anchor.setAttribute('href', link.href);
-        anchor.style.height = `${size /3.75}px`;
+        anchor.style.height = `${size / 3.75}px`;
         anchor.style.width = `${size / 1.5}px`;
         anchor.style.fontSize = `${size / 8}px`
-        anchor.style.display = 'flex';
-        anchor.style.justifyContent = 'center';
-        anchor.style.alignItems = 'center';
-        anchor.style.textTransform = 'uppercase';
-        anchor.style.color = 'var(--HSV-COLOR-YELLOW)';
-        anchor.style.textDecoration = 'none';
 
         wrapper.appendChild(anchor);
     })
@@ -121,23 +133,104 @@ function createNavLinks(size){
     return wrapper;
 }
 
-function createFooter(){
-    //setting size for easier scaling
-    var size = 180;
-
+function createFooter() {
     //creating elements
+    var nav = createFooterSection(navMenu);
+    var media = createFooterSection(mediaLinks);
+    var design = createFooterDesign();
+    var copyright = createCopyright();
     var footer = document.createElement('footer');
 
-    //setting footer css
-    footer.style.height = `300px`;
-    footer.style.position = 'relative';
-    footer.style.top = `${size / 2}px`;
-    footer.style.width = '100%';
-    footer.style.display = 'flex';
-    footer.style.flexDirection = 'row';
-    footer.style.backgroundColor = 'var(--HSV-COLOR-DARKBLUE)';
+    //setting footer content
+    footer.appendChild(nav);
+    footer.appendChild(media);
+    footer.appendChild(design);
+    footer.appendChild(copyright);
 
     return footer
+}
+
+function createFooterSection(section){
+    //creating element
+    var wrapper = document.createElement('section');
+    var title = document.createElement('h3');
+
+    //settings content
+    title.innerHTML = section.title;
+
+    wrapper.appendChild(title);
+
+    //function to insert all available links
+    section.links.forEach(link => {
+        let anchor = document.createElement('a');
+        anchor.innerHTML = link.txt;
+        anchor.setAttribute('href', link.href);
+        wrapper.appendChild(anchor);
+    })
+
+    return wrapper;
+}
+
+function createFooterDesign(){
+    //creating element
+    var design = document.createElement('div');
+    var title = document.createElement('div');
+
+    //settings css
+    title.innerHTML = 'Design:';
+    title.style.color = 'var(--HSV-COLOR-YELLOW)';
+    title.style.fontSize = '30px';
+
+    design.appendChild(title);
+
+    //function to insert all available names
+    ['Mark Sloesen','Miquel de Wit','Yusuf Sirin'].forEach(name => {
+        let span = document.createElement('span');
+        span.innerHTML = name;
+        span.style.display = 'block';
+        span.style.color = 'var(--HSV-COLOR-YELLOW)';
+        span.style.textDecoration = 'none';
+
+        design.appendChild(span);
+    })
+
+    return design;
+}
+
+function createCopyright(){
+    //creating element
+    var small = document.createElement('small');
+
+    //setting content
+    small.innerHTML = '&copy;2021 HVS Nederwijk';
+
+    return small;
+}
+
+function createBanner() {
+    //creating elements
+    var wrapper = document.createElement('div');
+    var banner = document.createElement('img');
+    banner.setAttribute('src', './images/banner.jpg');
+
+    //setting id
+    wrapper.id = "bannerWrapper";
+    banner.id = "banner";
+
+    wrapper.appendChild(banner);
+
+    return wrapper
+}
+
+function createHeader(){
+    var header = document.createElement('header');
+    var banner = createBanner();
+    var nav = createNavigation();
+
+    header.appendChild(banner);
+    header.appendChild(nav);
+
+    return header;
 }
 
 insetHeaderAndFooter();

@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
-        <script src='./script/script.js' defer></script>
+        <title>Loterij</title>
+        <script type="application/javascript" src='./script/script.js' defer></script>
+        <script type="application/javascript" src='./script/loterij.js' defer></script>
         <link href='./style/style.css' rel='stylesheet' />
+        <link href='./style/loterij.css' rel='stylesheet' />
     </head>
-    <body>
+    <body onload="generatePrizes()">
         <main>
-            
+            <div id='loterijBtn' onclick="location.href = './lotverzilveren.html'">
+                <div class='circle'></div>
+                <div class='rec'>Verzilver Je Lot</div>
+                <div class='arrow'></div>
+                <div class='arrowShadow'></div>
+            </div>
+            <div id="gewonnenLoten">
+                <h1>Gewonnen Loten</h1>
+                <article>
+                    
+                </article>
+            </div>
         </main>
     </body>
 </html>
