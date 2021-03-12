@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+} 
+main {
+    background-color:rgb(25,120,225,0.2);
+    width: 500px;
+    margin: auto;
+}
+#aanhef {
+    margin-left: 78px;
+    width: 240px;
+}
+#fname {
+    margin-left: 86px;
+    width: 240px;
+}
+#email {
+    margin-left: 39px;
+    width: 240px;
+}
+#tNumber{
+    margin-left: 7.4px;
+    width: 240px;
+}
+#question {
+    margin-left: 20px;
+    width: 240px;
+}
+#button{
+    width: 100px;
+    height: 25px;
+    border-color: black;
+}
