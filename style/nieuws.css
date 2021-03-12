@@ -1,44 +1,23 @@
-h1{
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    text-decoration: underline;
-    font-size: 50px;
+main img
+{
+  width: 270px;
+  height: 155px;
 }
-span{
-    background-color: var(--HSV-COLOR-DARKBLUE);
+
+#Foto1{
+    float: left;
+}
+
+#Foto2{
+    float: right;
+}
+
+h3{
     font-size: 30px;
-    text-decoration: none;
+    margin: 0;
+    text-transform: uppercase;
 }
-#Tekst1
-{
- 
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    font-size: 20px;
-    text-decoration: none;
-    text-align: left;
-   
-}
-#Tekst2
-{
- 
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    font-size: 20px;
-    text-decoration: none;
-    text-align: left;
-   
-}
-#Foto1
-{
-  width: 270px;
-  height: 155px;
-  float: left;
-  position:inherit;
 
-}
-#Foto2
-{
-  width: 270px;
-  height: 155px;
-  float: right;
-  position:inherit;
-
+article{
+    margin: 10px 0;
 }

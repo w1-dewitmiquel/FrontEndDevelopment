@@ -133,9 +133,3 @@
     display: flex;
     font-size: 30px;
 }
-
-h1{
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    text-decoration: underline;
-    font-size: 50px;
-}
