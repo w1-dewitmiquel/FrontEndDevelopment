@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Contact</title>
         <script src='./script/script.js' defer></script>
         <link href='./style/style.css' rel='stylesheet' />
+        <link href="style/contact.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <main>
-            
+            <h1>
+                Contact pagina
+            </h1>
+            <p>
+                Welkom op de contact pagina!<br>
+                Vul je gegevens in om met ons in contact te komen!
+            </p>
+            <br>
+            <!-- formulier -->
+            <div id="container">
+                <form action="contact.html">
+                    <h2>
+                        Alle velden dienen verplicht ingevuld te zijn
+                    </h2>
+                    <label for="salutation">Aanhef</label>
+                    <input type="text" id="aanhef" name="aanhef"><br>
+                    <label for="name">Naam</label>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="email">E-mailadres</label>
+                    <input type="text" id="email" name="email"><br>
+                    <label for="phoneNumber">Telefoonnummer</label>
+                    <input type="text" id="tNumber" name="tNumber"><br>
+                    <label for="questions">Vraag/opmerking</label>
+                    <textarea rows="4" cols="50" name="comment" id="comment">
+                    </textarea><br>
+                    <input type="submit" id="button" value="Aanmelden">
+                </form>
         </main>
     </body>
 </html>
