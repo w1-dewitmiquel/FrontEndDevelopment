@@ -1,121 +1,131 @@
-html{
-    --HSV-COLOR-DARKBLUE: #065471;
-    --HSV-COLOR-BLUE: #0A91AB;
-    --HSV-COLOR-YELLOW: #FFC045;
-
-    font-family: bahnschrift;
-    color: var(--HSV-COLOR-YELLOW);
+.centerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-body{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+html {
+  font-family: bahnschrift;
+  color: #FFC045;
 }
-
-main{
-    max-width: 70vw;
-    height: 100%;
-    border-left: 10vw solid var(--HSV-COLOR-BLUE);
-    border-right: 10vw solid var(--HSV-COLOR-BLUE);
-    background-color: #7EC1CE;
-    position: relative;
-    z-index: 0;
-    padding: 100px 5vw;
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-
-article{
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    padding: 10px;
+main {
+  max-width: 70vw;
+  height: 100%;
+  border-left: 10vw solid #0A91AB;
+  border-right: 10vw solid #0A91AB;
+  background-color: #7EC1CE;
+  position: relative;
+  z-index: 0;
+  padding: 100px 5vw;
 }
-
-h1{
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    text-decoration: underline;
-    font-size: 50px;
-    margin: 0;
-    text-transform: uppercase;
+article {
+  background-color: #065471;
+  padding: 10px;
 }
-
-a{
-    text-transform: uppercase;
-    text-decoration: none;
-    color: unset;
+h1 {
+  background-color: #065471;
+  text-decoration: underline;
+  font-size: 50px;
+  margin: 0;
+  text-transform: uppercase;
 }
-
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: unset;
+}
 /*copyright*/
-small{
-    position: absolute;
-    left: 0;
-    bottom: 0;
+small {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
-
 /*banner*/
-#bannerWrapper{
-    height: 130px;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+#bannerWrapper {
+  height: 130px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-
-#banner{
-    width: 100%;
-    bottom: -100px;
-    position: absolute;
-    filter: grayscale(.5);
+#banner {
+  width: 100%;
+  bottom: -100px;
+  position: absolute;
+  filter: grayscale(0.5);
 }
-
 /*footer*/
-footer{
-    position: relative;
-    bottom: 0;
-    width: calc(100% - 100px);
-    display: flex;
-    flex-direction: row;
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    justify-content: space-around;
-    padding: 50px;
+footer {
+  position: relative;
+  bottom: 0;
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: row;
+  background-color: #065471;
+  justify-content: space-around;
+  padding: 50px;
 }
-
-footer section h3{
-    font-size: 30px;
-    margin: 0;
+footer section h3 {
+  font-size: 30px;
+  margin: 0;
 }
-
-footer section a{
-    display: block;
+footer section a {
+  display: block;
 }
-
 /*navigation*/
-nav{
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    background-color: var(--HSV-COLOR-DARKBLUE);
+nav {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #065471;
 }
-
-nav #navLinks{
-    position: relative;
-    display: flex;
+nav #navLogo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-nav #navLinks a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+nav #navLogoTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-nav #navLogo{
-    position: relative;
-    display: flex;
-    align-items: center;
+nav #navLinks {
+  position: relative;
+  display: flex;
+  visibility: visible;
 }
-
-nav #navLogoTxt{
-    justify-content: center;
-    display: flex;
-    align-items: center;
+nav #navLinks a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #065471;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (max-width: 720px) {
+  nav #navLinks {
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 48px;
+  }
+}
+nav #hamburger {
+  text-align: center;
+  visibility: hidden;
+  margin-left: auto;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (max-width: 720px) {
+  nav #hamburger {
+    visibility: visible;
+  }
+}
+nav #hamburger:hover {
+  cursor: pointer;
 }

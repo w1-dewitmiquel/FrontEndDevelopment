@@ -1,26 +1,29 @@
-td{
-    vertical-align: top;
+.centerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-table, input, textarea{
-    width: 100%;
-    font-size: 25px;
+td {
+  vertical-align: top;
 }
-
-label{
-    font-size: 20px;
-    text-transform: uppercase;
+table,
+input,
+textarea {
+  width: 100%;
+  font-size: 25px;
 }
-
-input[type="checkbox"]{
-    width: inherit;
+label {
+  font-size: 20px;
+  text-transform: uppercase;
 }
-
-input[type="submit"]{
-    background-color: var(--HSV-COLOR-DARKBLUE);
-    border: 5px solid var(--HSV-COLOR-YELLOW);
-    color: var(--HSV-COLOR-YELLOW);
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 5px;
+input[type="checkbox"] {
+  width: inherit;
+}
+input[type="submit"] {
+  background-color: #065471;
+  border: 5px solid #FFC045;
+  color: #FFC045;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
 }

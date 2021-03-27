@@ -73,15 +73,40 @@ function createNavigation() {
     var nav = document.createElement('nav');
     var logo = createNavLogo(size);
     var links = createNavLinks(size);
+    var menu = createNavMenu(size, links);
 
     //setting navigation bar
     nav.style.height = `${size / 3.75}px`;
 
     //merging elements
     nav.appendChild(logo);
-    nav.appendChild(links)
+    nav.appendChild(links);
+    nav.appendChild(menu);
 
     return nav
+}
+
+function createNavMenu(size, links){
+    const menu = document.createElement('div');
+    
+    menu.id = 'hamburger';
+    menu.innerHTML = '='
+    menu.style.height = `${size / 3.75}px`;
+    menu.style.width = `${size / 3.75}px`;
+    menu.style.fontSize = `${size / 4}px`;
+    
+    menu.addEventListener('click',()=>{
+        if(links.style.visibility == 'visible')
+        {
+            links.style.visibility = 'hidden';
+        }
+        else
+        {
+            links.style.visibility = 'visible';
+        }
+    })
+    
+    return menu;
 }
 
 function createNavLogo(size) {
@@ -178,7 +203,6 @@ function createFooterDesign(){
 
     //settings css
     title.innerHTML = 'Design:';
-    title.style.color = 'var(--HSV-COLOR-YELLOW)';
     title.style.fontSize = '30px';
 
     design.appendChild(title);
@@ -188,7 +212,6 @@ function createFooterDesign(){
         let span = document.createElement('span');
         span.innerHTML = name;
         span.style.display = 'block';
-        span.style.color = 'var(--HSV-COLOR-YELLOW)';
         span.style.textDecoration = 'none';
 
         design.appendChild(span);

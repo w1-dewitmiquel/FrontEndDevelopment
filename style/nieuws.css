@@ -1,23 +1,18 @@
-main img
-{
+main img {
   width: 270px;
   height: 155px;
 }
-
-#Foto1{
-    float: left;
+#Foto1 {
+  float: left;
 }
-
-#Foto2{
-    float: right;
+#Foto2 {
+  float: right;
 }
-
-h3{
-    font-size: 30px;
-    margin: 0;
-    text-transform: uppercase;
+article {
+  margin: 10px 0;
 }
-
-article{
-    margin: 10px 0;
+article h3 {
+  font-size: 30px;
+  margin: 0;
+  text-transform: uppercase;
 }

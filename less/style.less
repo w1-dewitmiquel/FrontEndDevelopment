@@ -1,0 +1,131 @@
+@import "global.less";
+
+html{
+    font-family: @HSV-FONT;
+    color: @HSV-YELLOW;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main{
+    max-width: 70vw;
+    height: 100%;
+    border-left: 10vw solid @HSV-BLUE;
+    border-right: 10vw solid @HSV-BLUE;
+    background-color: @HSV-LIGHTBLUE;
+    position: relative;
+    z-index: 0;
+    padding: 100px 5vw;
+}
+
+article{
+    background-color: @HSV-DARKBLUE;
+    padding: 10px;
+}
+
+h1{
+    background-color: @HSV-DARKBLUE;
+    text-decoration: underline;
+    font-size: 50px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: unset;
+}
+
+/*copyright*/
+small{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/*banner*/
+#bannerWrapper{
+    height: 130px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#banner{
+    width: 100%;
+    bottom: -100px;
+    position: absolute;
+    filter: grayscale(.5);
+}
+
+/*footer*/
+footer{
+    position: relative;
+    bottom: 0;
+    width: calc(100% - 100px);
+    display: flex;
+    flex-direction: row;
+    background-color: @HSV-DARKBLUE;
+    justify-content: space-around;
+    padding: 50px;
+    section{
+        h3{
+            font-size: 30px;
+            margin: 0;
+        }
+        a{
+            display: block;
+        }
+    }
+}
+
+/*navigation*/
+nav{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: @HSV-DARKBLUE;
+    #navLogo{
+        position: relative;
+        .centerContent
+    }
+    #navLogoTxt{
+        .centerContent
+    }
+    #navLinks{
+        position: relative;
+        display: flex;
+        visibility: visible;
+        a{
+            .centerContent;
+            background-color: @HSV-DARKBLUE;
+        }
+        @media @tablet, @phone{
+            visibility: hidden;
+            position: absolute;
+            display: block;
+            right: 0;
+            top:48px;
+        }
+    }
+    #hamburger{
+        text-align: center;
+        visibility: hidden;
+        margin-left: auto;
+        @media @tablet, @phone {
+            visibility: visible;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
