@@ -73,6 +73,7 @@ function createNavigation() {
     var nav = document.createElement('nav');
     var logo = createNavLogo(size);
     var links = createNavLinks(size);
+    var pagetitle = createNavPageTitle(size);
     var menu = createNavMenu(size, links);
 
     //setting navigation bar
@@ -81,19 +82,30 @@ function createNavigation() {
     //merging elements
     nav.appendChild(logo);
     nav.appendChild(links);
+    nav.appendChild(pagetitle);
     nav.appendChild(menu);
 
     return nav
+}
+
+function createNavPageTitle(size){
+    const title = document.createElement('div');
+    title.id = 'pageTitle';
+    
+    title.innerHTML = document.title;
+    title.style.height = `${size / 3.75}px`;
+
+    return title;
 }
 
 function createNavMenu(size, links){
     const menu = document.createElement('div');
     
     menu.id = 'hamburger';
-    menu.innerHTML = '='
+    menu.innerHTML = '&#9776;'
     menu.style.height = `${size / 3.75}px`;
     menu.style.width = `${size / 3.75}px`;
-    menu.style.fontSize = `${size / 4}px`;
+    menu.style.fontSize = `${size / 5}px`;
     
     menu.addEventListener('click',()=>{
         if(links.style.visibility == 'visible')

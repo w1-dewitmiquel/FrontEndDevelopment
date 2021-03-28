@@ -3,7 +3,7 @@
 article{
     background-color: unset;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
 }
 
@@ -15,8 +15,9 @@ span{
 
 section{
     background-color: @HSV-DARKBLUE;
-    width:200px;
-    height:200px;
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
 }
 
 main img{

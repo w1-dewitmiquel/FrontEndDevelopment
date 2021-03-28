@@ -15,7 +15,6 @@ body {
 }
 main {
   max-width: 70vw;
-  height: 100%;
   border-left: 10vw solid #0A91AB;
   border-right: 10vw solid #0A91AB;
   background-color: #7EC1CE;
@@ -33,6 +32,11 @@ h1 {
   font-size: 50px;
   margin: 0;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 720px) {
+  h1 {
+    font-size: 40px;
+  }
 }
 a {
   text-transform: uppercase;
@@ -120,6 +124,7 @@ nav #hamburger {
   text-align: center;
   visibility: hidden;
   margin-left: auto;
+  margin-right: 10px;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px), only screen and (max-width: 720px) {
   nav #hamburger {
@@ -128,4 +133,15 @@ nav #hamburger {
 }
 nav #hamburger:hover {
   cursor: pointer;
+}
+nav #pageTitle {
+  visibility: hidden;
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  nav #pageTitle {
+    visibility: visible;
+  }
 }
