@@ -19,6 +19,7 @@ main {
   border-right: 10vw solid #0A91AB;
   background-color: #7EC1CE;
   position: relative;
+  height: 100%;
   z-index: 0;
   padding: 100px 5vw;
 }
