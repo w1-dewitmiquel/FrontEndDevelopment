@@ -71,13 +71,10 @@ function createNavigation() {
 
     //creating elements
     var nav = document.createElement('nav');
-    var logo = createNavLogo(size);
-    var links = createNavLinks(size);
-    var pagetitle = createNavPageTitle(size);
-    var menu = createNavMenu(size, links);
-
-    //setting navigation bar
-    nav.style.height = `${size / 3.75}px`;
+    var logo = createNavLogo();
+    var links = createNavLinks();
+    var pagetitle = createNavPageTitle();
+    var menu = createNavMenu(links);
 
     //merging elements
     nav.appendChild(logo);
@@ -88,24 +85,20 @@ function createNavigation() {
     return nav
 }
 
-function createNavPageTitle(size){
+function createNavPageTitle(){
     const title = document.createElement('div');
     title.id = 'pageTitle';
     
     title.innerHTML = document.title;
-    title.style.height = `${size / 3.75}px`;
 
     return title;
 }
 
-function createNavMenu(size, links){
+function createNavMenu(links){
     const menu = document.createElement('div');
     
     menu.id = 'hamburger';
     menu.innerHTML = '&#9776;'
-    menu.style.height = `${size / 3.75}px`;
-    menu.style.width = `${size / 3.75}px`;
-    menu.style.fontSize = `${size / 5}px`;
     
     menu.addEventListener('click',()=>{
         if(links.style.visibility == 'visible')
@@ -121,26 +114,18 @@ function createNavMenu(size, links){
     return menu;
 }
 
-function createNavLogo(size) {
+function createNavLogo() {
     //creating wrapper
     var logo = document.createElement('div');
     logo.id = "navLogo"
-    logo.style.height = `${size}px`;
-    logo.style.top = `-${size / 450 * 165}px`;
 
     //create Text;
     var txt = document.createElement('span');
     txt.innerHTML = 'HSV Nederwijk'
-    txt.id = "navLogoTxt"
-    txt.style.height = `${size / 3.75}px`;
-    txt.style.width = `${size}px`;
-    txt.style.fontSize = `${size / 8}px`;
 
     //creating image
     var img = document.createElement('img');
     img.setAttribute('src', './images/logo.png');
-    img.style.width = `${size}px`;
-    img.style.height = `${size}px`;
 
     //merging elements
     logo.appendChild(txt);
@@ -150,7 +135,7 @@ function createNavLogo(size) {
     return logo
 }
 
-function createNavLinks(size) {
+function createNavLinks() {
     //creates a wrapper for all the anchors;
     var wrapper = document.createElement('div');
     wrapper.id = "navLinks"
@@ -160,10 +145,6 @@ function createNavLinks(size) {
         let anchor = document.createElement('a');
         anchor.innerHTML = link.txt;
         anchor.setAttribute('href', link.href);
-        anchor.style.height = `${size / 3.75}px`;
-        anchor.style.width = `${size / 1.5}px`;
-        anchor.style.fontSize = `${size / 8}px`
-
         wrapper.appendChild(anchor);
     })
 
