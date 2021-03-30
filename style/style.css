@@ -137,12 +137,13 @@ nav #hamburger:hover {
 }
 nav #pageTitle {
   visibility: hidden;
-  width: 100%;
+  width: 0px;
   font-size: 40px;
   text-align: center;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px) {
   nav #pageTitle {
     visibility: visible;
+    width: 100%;
   }
 }
