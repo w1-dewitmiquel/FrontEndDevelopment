@@ -1,53 +1,89 @@
 @import "global.less";
 
+@arrowSize: 100px;
+
 #loterijBtn{
-    height: 100px;
+    height: @arrowSize;
     width: 100%;
     display: flex;
     position: relative;
     cursor: pointer;
+    @media @phone{
+        height: calc(@arrowSize / 3);
+    }
     .circle{
         position: absolute;
-        height: 150px;
-        width: 150px;
-        left: -25px;
-        top: -25px;
+        height: calc(@arrowSize * 1.5);
+        width: calc(@arrowSize * 1.5);
+        left: calc(@arrowSize * -.25);
+        top: calc(@arrowSize * -.25);
         background-color: @HSV-DARKBLUE;
         border-radius: 50%;
         z-index: 10;
-        border: 5px solid @HSV-YELLOW;
+        border: calc(@arrowSize * .05) solid @HSV-YELLOW;
+        @media @phone{
+            height: calc(@arrowSize * (1.5 / 3));
+            width: calc(@arrowSize * (1.5 / 3));
+            left: calc(@arrowSize * (-.25 / 3));
+            top: calc(@arrowSize * (-.25 / 3));
+            border: calc(@arrowSize * (.05 / 3)) solid @HSV-YELLOW;
+        }
     }
     .rec{
-        height: 70px;
-        width: calc(100% - 150px);
+        height: calc(@arrowSize * .7);
+        width: calc(100% - @arrowSize * 1.5);
         background-color: @HSV-DARKBLUE;
-        border: 5px solid @HSV-YELLOW;
+        border: calc(@arrowSize * .05) solid @HSV-YELLOW;
         position: relative;
-        top: 15px;
-        left: 50px;
+        top: calc(@arrowSize * .15);
+        left: calc(@arrowSize * .5);
 
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 40px;
+        @media @tablet{
+            font-size: 30px;
+        }
+        @media @phone{
+            font-size: 15px;
+            height: calc(@arrowSize * (.7 / 3));
+            width: calc(100% - @arrowSize * (1.5 / 3));
+            left: calc(@arrowSize * (.5 / 3));
+            top: calc(@arrowSize * (.15 / 3));
+            border: calc(@arrowSize * (.05 / 3)) solid @HSV-YELLOW;
+        }
     }
     .arrow{
         position: absolute;
         z-index: 10;
         right: 0;
-        top: -15px;
-        border-top: 70px solid transparent;
-        border-bottom: 70px solid transparent;
-        border-left: 100px solid @HSV-DARKBLUE;
+        top: calc(@arrowSize * -0.15);
+        border-top: calc(@arrowSize * .7) solid transparent;
+        border-bottom: calc(@arrowSize * .7) solid transparent;
+        border-left: @arrowSize solid @HSV-DARKBLUE;
+        @media @phone{
+            top: calc(@arrowSize * (-.15 / 3));
+            border-top: calc(@arrowSize * (.7 / 3)) solid transparent;
+            border-bottom: calc(@arrowSize * (.7 / 3)) solid transparent;
+            border-left: calc(@arrowSize / 3) solid @HSV-DARKBLUE;
+        }
     }
     .arrowShadow{
         position: absolute;
         z-index: -1;
-        right: -9px;
-        top: -25px;
-        border-top: 80px solid transparent;
-        border-bottom: 80px solid transparent;
-        border-left: 115px solid @HSV-YELLOW;
+        right: calc(@arrowSize * -.09);
+        top: calc(@arrowSize * -.25);
+        border-top: calc(@arrowSize * .8) solid transparent;
+        border-bottom: calc(@arrowSize * .8) solid transparent;
+        border-left: calc(@arrowSize * 1.15) solid @HSV-YELLOW;
+        @media @phone{
+            right: calc(@arrowSize * (-.09 / 3));
+            top: calc(@arrowSize * (-.25 / 3));
+            border-top: calc(@arrowSize * (.8 / 3)) solid transparent;
+            border-bottom: calc(@arrowSize * (.8 / 3)) solid transparent;
+            border-left: calc(@arrowSize * (1.15 / 3)) solid @HSV-YELLOW;
+        }
     }
 }
 
@@ -55,11 +91,12 @@
     position: relative;
     top: 90px;
     article{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
     section{
+        width: 200px;
         background-color: @HSV-DARKBLUE;
         justify-content: space-between;
         display: flex;

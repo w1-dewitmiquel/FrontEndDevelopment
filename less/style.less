@@ -1,5 +1,7 @@
 @import "global.less";
 
+@navSize: 180px;
+
 html{
     font-family: @HSV-FONT;
     color: @HSV-YELLOW;
@@ -17,7 +19,6 @@ main{
     border-left: 10vw solid @HSV-BLUE;
     border-right: 10vw solid @HSV-BLUE;
     background-color: @HSV-LIGHTBLUE;
-    height: 100%;
     position: relative;
     z-index: 0;
     padding: 100px 5vw;
@@ -58,6 +59,9 @@ small{
     position: relative;
     width: 100%;
     overflow: hidden;
+    @media @phone{
+        height: 80px;
+    }
 }
 
 #banner{
@@ -65,6 +69,9 @@ small{
     bottom: -100px;
     position: absolute;
     filter: grayscale(.5);
+    @media @phone{
+        bottom: 0;
+    }
 }
 
 /*footer*/
@@ -85,6 +92,7 @@ footer{
         a{
             display: block;
         }
+        margin: 0;
     }
 }
 
@@ -96,12 +104,38 @@ nav{
     display: flex;
     flex-direction: row;
     background-color: @HSV-DARKBLUE;
+    height: calc(@navSize / 3.75);
+    @media @phone{
+        height: calc(@navSize / 7.5);
+    }
     #navLogo{
         position: relative;
-        .centerContent
-    }
-    #navLogoTxt{
-        .centerContent
+        height: @navSize;
+        top: calc(@navSize / 30 * -11);
+        .centerContent;
+        @media @phone{
+            height: calc(@navSize / 2);
+            top: calc(@navSize / 60 * -11);
+        }
+        span{
+            .centerContent;
+            height: calc(@navSize / 3.75);
+            width: @navSize;
+            font-size: calc(@navSize / 8);
+            @media @phone{
+                height: calc(@navSize / 7.5);
+                width: calc(@navSize / 2.2);
+                font-size: calc(@navSize / 16);
+            }
+        }
+        img{
+            width: @navSize;
+            height: @navSize;
+            @media @phone{
+                height: calc(@navSize / 2);
+                width: calc(@navSize / 2);
+            }
+        }
     }
     #navLinks{
         position: relative;
@@ -110,13 +144,23 @@ nav{
         a{
             .centerContent;
             background-color: @HSV-DARKBLUE;
+            height: calc(@navSize / 3.75);
+            width: calc(@navSize / 1.5);
+            font-size: calc(@navSize / 8);
+            @media @tablet, @phone{
+                width: 100% !important;
+            }
         }
         @media @tablet, @phone{
             visibility: hidden;
             position: absolute;
             display: block;
             right: 0;
-            top:48px;
+            top: calc(@navSize / 3.75);
+            width: 100%;
+        }
+        @media @phone{
+            top: calc(@navSize / 7.5);
         }
     }
     #hamburger{
@@ -124,8 +168,16 @@ nav{
         visibility: hidden;
         margin-left: auto;
         margin-right: 10px;
+        height: calc(@navSize / 3.75);
+        width: calc(@navSize / 3.75);
+        font-size: calc(@navSize / 5);
         @media @tablet, @phone {
             visibility: visible;
+        }
+        @media @phone{
+            height: calc(@navSize / 7.5);
+            width: calc(@navSize / 7.5);
+            font-size: calc(@navSize / 10);
         }
         &:hover{
             cursor: pointer;
@@ -136,9 +188,13 @@ nav{
         width: 0px;
         font-size: 40px;
         text-align: center;
+        height: calc(@navSize / 3.75);
         @media @tablet{
             visibility: visible;
             width: 100%;
+        }
+        @media @phone{
+            height: calc(@navSize / 7.5);
         }
     }
 }

@@ -1,6 +1,15 @@
+.centerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 main img {
   width: 270px;
-  height: 155px;
+}
+@media only screen and (max-width: 720px) {
+  main img {
+    width: 100%;
+  }
 }
 #Foto1 {
   float: left;
