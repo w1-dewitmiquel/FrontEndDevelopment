@@ -91,6 +91,9 @@ footer{
         }
         a{
             display: block;
+            &:hover{
+                text-decoration: underline;
+            }
         }
         margin: 0;
     }
@@ -144,6 +147,9 @@ nav{
                 width: calc(@navSize / 2);
             }
         }
+        &:hover{
+            cursor: pointer;
+        }
     }
     #navLinks{
         position: relative;
@@ -158,6 +164,13 @@ nav{
             @media @tablet, @phone{
                 width: 100% !important;
             }
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        .selected{
+            color: @HSV-DARKBLUE;
+            background-color: @HSV-YELLOW;
         }
         @media @tablet, @phone{
             visibility: hidden;

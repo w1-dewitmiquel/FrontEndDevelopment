@@ -93,6 +93,9 @@ footer section h3 {
 footer section a {
   display: block;
 }
+footer section a:hover {
+  text-decoration: underline;
+}
 @media only screen and (max-width: 720px) {
   footer {
     flex-direction: column;
@@ -157,6 +160,9 @@ nav #navLogo img {
     width: calc(180px / 2);
   }
 }
+nav #navLogo:hover {
+  cursor: pointer;
+}
 nav #navLinks {
   position: relative;
   display: flex;
@@ -175,6 +181,13 @@ nav #navLinks a {
   nav #navLinks a {
     width: 100% !important;
   }
+}
+nav #navLinks a:hover {
+  text-decoration: underline;
+}
+nav #navLinks .selected {
+  color: #065471;
+  background-color: #FFC045;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px), only screen and (max-width: 720px) {
   nav #navLinks {

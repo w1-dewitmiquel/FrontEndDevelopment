@@ -30,24 +30,20 @@ const mediaLinks = {
     title: 'Social',
     links:[
         {
-            txt: 'facebook',
+            txt: '<i style="font-size:24px" class="fa">&#xf230;</i>',
             href: 'http://www.facebook.nl'
         },
         {
-            txt: 'twitter',
+            txt: '<i style="font-size:24px" class="fa">&#xf081;</i>',
             href: 'http://www.twitter.nl'
         },
         {
-            txt: 'instagram',
+            txt: '<i style="font-size:24px" class="fa">&#xf16d;</i>',
             href: 'http://www.instagram.nl'
         },
         {
-            txt: 'youtube',
+            txt: '<i style="font-size:24px" class="fa">&#xf16a;</i>',
             href: 'http://www.youtube.nl'
-        },
-        {
-            txt: 'tiktok',
-            href: 'http://www.tiktok.nl'
         }
     ]
 };
@@ -66,9 +62,6 @@ function insetHeaderAndFooter() {
 }
 
 function createNavigation() {
-    //setting size for easier scaling
-    var size = 180;
-
     //creating elements
     var nav = document.createElement('nav');
     var logo = createNavLogo();
@@ -131,6 +124,11 @@ function createNavLogo() {
     logo.appendChild(txt);
     logo.appendChild(img);
 
+    //setting function to go to home
+    logo.addEventListener("click",()=>{
+        window.location.href = "index.html";
+    })
+
     //after creations it return the element
     return logo
 }
@@ -145,6 +143,9 @@ function createNavLinks() {
         let anchor = document.createElement('a');
         anchor.innerHTML = link.txt;
         anchor.setAttribute('href', link.href);
+        if(link.href == window.location.pathname.split("/").pop()){
+            anchor.className = "selected";
+        }
         wrapper.appendChild(anchor);
     })
 
