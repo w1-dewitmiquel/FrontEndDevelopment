@@ -35,7 +35,7 @@ h1 {
 }
 @media only screen and (max-width: 720px) {
   h1 {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 a {
@@ -92,6 +92,16 @@ footer section h3 {
 }
 footer section a {
   display: block;
+}
+@media only screen and (max-width: 720px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer section {
+    margin: 10px 0;
+  }
 }
 /*navigation*/
 nav {
@@ -208,11 +218,11 @@ nav #hamburger:hover {
 nav #pageTitle {
   visibility: hidden;
   width: 0px;
-  font-size: 40px;
+  font-size: calc(180px / 4.5);
   text-align: center;
   height: calc(180px / 3.75);
 }
-@media only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (max-width: 720px) {
   nav #pageTitle {
     visibility: visible;
     width: 100%;
@@ -221,5 +231,6 @@ nav #pageTitle {
 @media only screen and (max-width: 720px) {
   nav #pageTitle {
     height: calc(180px / 7.5);
+    font-size: calc(180px / 9);
   }
 }

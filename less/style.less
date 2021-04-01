@@ -36,7 +36,7 @@ h1{
     margin: 0;
     text-transform: uppercase;
     @media @phone{
-        font-size: 40px;
+        font-size: 35px;
     }
 }
 
@@ -93,6 +93,14 @@ footer{
             display: block;
         }
         margin: 0;
+    }
+    @media @phone{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        section{
+            margin: 10px 0;
+        }
     }
 }
 
@@ -186,15 +194,16 @@ nav{
     #pageTitle{
         visibility: hidden;
         width: 0px;
-        font-size: 40px;
+        font-size: calc(@navSize / 4.5);
         text-align: center;
         height: calc(@navSize / 3.75);
-        @media @tablet{
+        @media @tablet, @phone{
             visibility: visible;
             width: 100%;
         }
         @media @phone{
             height: calc(@navSize / 7.5);
+            font-size: calc(@navSize / 9);
         }
     }
 }
