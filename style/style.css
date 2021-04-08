@@ -14,7 +14,7 @@ body {
   height: 100vh;
 }
 main {
-  max-height: calc(100vh - 300px);
+  min-height: calc(100vh - 300px);
   max-width: 70vw;
   border-left: 10vw solid #0A91AB;
   border-right: 10vw solid #0A91AB;
